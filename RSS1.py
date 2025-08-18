@@ -27,24 +27,26 @@ from browser_utils import click_button_in_order
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://www.aska-pharma.co.jp/iryouiyaku/?btn_ind=pha"
-GAKKAI = "あすか製薬"
+BASE_URL = "https://www.ohara-ch.co.jp/"
+GAKKAI = "大原薬品"
 
-SELECTOR_TITLE = "ul.c-list li"
+SELECTOR_TITLE = "ul.newslist.all li"
 title_selector = "a"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "ul.c-list li"
-date_selector = "span"
+SELECTOR_DATE = "ul.newslist.all li"
+date_selector = "span.date"
 date_index = 0
-year_unit = "年"; month_unit = "月"; day_unit = "日"
+year_unit = "."
+month_unit = "."
+day_unit = ""
 date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
 date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
 
 # ===== ポップアップ順序クリック設定 =====
-POPUP_MODE = 1  # 1: 実行 / 0: スキップ
-POPUP_BUTTONS = ["はい"]  # 正確なボタン表記だけを指定
+POPUP_MODE = 0  # 1: 実行 / 0: スキップ
+POPUP_BUTTONS = [""]  # 正確なボタン表記だけを指定
 WAIT_BETWEEN_POPUPS_MS = 500
 BUTTON_TIMEOUT_MS = 12000
 

@@ -25,28 +25,28 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://ohsugi-kanpo.co.jp/medical/package"
-GAKKAI = "大杉製薬（包装）"
+BASE_URL = "https://www.kampoyubi.jp/products/information.html"
+GAKKAI = "クラシエ（製品）"
 
-SELECTOR_TITLE = "div.col article"
-title_selector = "h2"
+SELECTOR_TITLE = "table.table-cmn-01.even.link-w tr.secondTable02n.stripeTable.mb50.fs12"
+title_selector = "a"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "div.col article"  # typo修正済み
-date_selector = "time"
+SELECTOR_DATE = "table.table-cmn-01.even.link-w tr.secondTable02n.stripeTable.mb50.fs12"  # typo修正済み
+date_selector = "td"
 date_index = 0
 year_unit = "."
-month_unit = "."
+month_unit = ""
 day_unit = ""
-date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
-date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
+date_format = f"%Y{year_unit}%m"
+date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}})"
 # date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
 # date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
 
 # ===== ポップアップ順序クリック設定 =====
 POPUP_MODE = 1  # 0: ポップアップ処理しない, 1: 処理する
-POPUP_BUTTONS = ["はい"] if POPUP_MODE else [] 
+POPUP_BUTTONS = ["薬剤師"] if POPUP_MODE else [] 
 WAIT_BETWEEN_POPUPS_MS = 500
 BUTTON_TIMEOUT_MS = 12000
 

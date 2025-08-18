@@ -25,16 +25,16 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://www.msd.co.jp/home/info/"
-GAKKAI = "MSD"
+BASE_URL = "https://www.kyorin-pharm.co.jp/news/press/"
+GAKKAI = "杏林製薬(プレスリリース)"
 
-SELECTOR_TITLE = "div.entry-content div.wp-block-columns.border-bottom-1"
+SELECTOR_TITLE = "div.mt-6.lg\\:mt-10 dd.w-full"
 title_selector = "a"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "div.entry-content div.wp-block-columns.border-bottom-1"  # typo修正済み
-date_selector = "p"
+SELECTOR_DATE = "div.mt-6.lg\\:mt-10 dt"  # typo修正済み
+date_selector = ""
 date_index = 0
 year_unit = "年"
 month_unit = "月"

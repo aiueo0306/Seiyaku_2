@@ -25,20 +25,20 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://www.iwakiseiyaku.co.jp/"
-GAKKAI = "岩城製薬"
+BASE_URL = "https://www.kaken.co.jp/nr/"
+GAKKAI = "科研製薬(ニュース)"
 
-SELECTOR_TITLE = "div.rss_box dl"
-title_selector = "a"
+SELECTOR_TITLE = "ul.s_eirList div.s_eirModule_title.s_titleBox_title"
+title_selector = "span"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "div.rss_box dl"  # typo修正済み
-date_selector = "dt"
+SELECTOR_DATE = "ul.s_eirList li"  # typo修正済み
+date_selector = "time"
 date_index = 0
-year_unit = "."
-month_unit = "."
-day_unit = ""
+year_unit = "年"
+month_unit = "月"
+day_unit = "日"
 date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
 date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
 # date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
@@ -46,7 +46,7 @@ date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_uni
 
 # ===== ポップアップ順序クリック設定 =====
 POPUP_MODE = 1  # 0: ポップアップ処理しない, 1: 処理する
-POPUP_BUTTONS = ["閉じる"] if POPUP_MODE else [] 
+POPUP_BUTTONS = ["全て許可"] if POPUP_MODE else [] 
 WAIT_BETWEEN_POPUPS_MS = 500
 BUTTON_TIMEOUT_MS = 12000
 

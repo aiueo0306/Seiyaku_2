@@ -26,24 +26,26 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://www.astellas.com/jp/"
-GAKKAI = "アステラス"
+BASE_URL = "https://www.okayama-taiho.co.jp/"
+GAKKAI = "岡山大鵬"
 
-SELECTOR_TITLE = "div.view-content div.view-item"
-title_selector = "div.views-field-field-title"
+SELECTOR_TITLE = "dl.newslist dd"
+title_selector = "a"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "div.view-content div.view-item"  # typo修正済み
-date_selector = "time"
+SELECTOR_DATE = "dl.newslist dt"  # typo修正済み
+date_selector = ""
 date_index = 0
-year_unit = "年"; month_unit = "月"; day_unit = "日"
+year_unit = "."
+month_unit = "."
+day_unit = ""
 date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
 date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
 
 # ===== ポップアップ順序クリック設定 =====
-POPUP_MODE = 1  # 1: 実行 / 0: スキップ
-POPUP_BUTTONS = ["閉じる", "すべての Cookie を受け入れる"]  # 必要に応じて編集
+POPUP_MODE = 0  # 1: 実行 / 0: スキップ
+POPUP_BUTTONS = [""]  # 必要に応じて編集
 WAIT_BETWEEN_POPUPS_MS = 500
 BUTTON_TIMEOUT_MS = 12000
 

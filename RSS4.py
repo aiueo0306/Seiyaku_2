@@ -26,29 +26,26 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-url = "https://www.abbvie.co.jp/press-release/2025-news-archive.html"
-current_year = datetime.datetime.now().year
+BASE_URL = "https://www.orphanpacific.com/"
+GAKKAI = "オーファンパシフィック"
 
-BASE_URL = re.sub(r"\d{4}", str(current_year), url, count=1)
-GAKKAI = "アッヴィ"
-
-SELECTOR_TITLE = "div.cmp-container div.text.cmp-text-xx-large.single-column.standard"
-title_selector = "a"
+SELECTOR_TITLE = "div#news-news article"
+title_selector = "span.p-pdf"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "div.cmp-container div.text.cmp-text-xx-large.single-column.standard"  # typo修正済み
-date_selector = "div"
+SELECTOR_DATE = "div#news-news article"  # typo修正済み
+date_selector = "span.date"
 date_index = 0
-year_unit = "- "; month_unit = "- "; day_unit = ""
-date_format = "%b %d, %Y"
-date_regex = r"([A-Za-z]{3}) (\d{1,2}), (\d{4})"
-# date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
-# date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
+year_unit = "."
+month_unit = "."
+day_unit = ""
+date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
+date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
 
 # ===== ポップアップ順序クリック設定 =====
-POPUP_MODE = 1  # 1: 実行 / 0: スキップ
-POPUP_BUTTONS = ["閉じる"]  # 必要に応じて編集
+POPUP_MODE = 0  # 1: 実行 / 0: スキップ
+POPUP_BUTTONS = [""]  # 必要に応じて編集
 WAIT_BETWEEN_POPUPS_MS = 500
 BUTTON_TIMEOUT_MS = 12000
 

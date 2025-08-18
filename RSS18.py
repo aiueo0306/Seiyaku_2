@@ -25,16 +25,16 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://www.otsuka.co.jp/"
-GAKKAI = "大塚製薬"
+BASE_URL = "https://www.kenei-pharm.com/"
+GAKKAI = "健栄製薬"
 
-SELECTOR_TITLE = "div.home-topics__inner article"
-title_selector = "h3"
+SELECTOR_TITLE = "div.l-newsList div.l-newsList-item"
+title_selector = "div.l-newsList-ttl"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "div.home-topics__inner article"  # typo修正済み
-date_selector = "time"
+SELECTOR_DATE = "div.l-newsList div.l-newsList-item"  # typo修正済み
+date_selector = "div.l-newsList-time"
 date_index = 0
 year_unit = "."
 month_unit = "."
@@ -45,8 +45,8 @@ date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_uni
 # date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
 
 # ===== ポップアップ順序クリック設定 =====
-POPUP_MODE = 0  # 0: ポップアップ処理しない, 1: 処理する
-POPUP_BUTTONS = [""] if POPUP_MODE else [] 
+POPUP_MODE = 1  # 0: ポップアップ処理しない, 1: 処理する
+POPUP_BUTTONS = ["すべて同意"] if POPUP_MODE else [] 
 WAIT_BETWEEN_POPUPS_MS = 500
 BUTTON_TIMEOUT_MS = 12000
 

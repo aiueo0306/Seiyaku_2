@@ -25,20 +25,20 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://www.otsukakj.jp/"
-GAKKAI = "大塚製薬工場(ニュース)"
+BASE_URL = "https://www.kowa.co.jp/"
+GAKKAI = "興和"
 
-SELECTOR_TITLE = "div.newsrelease dd"
+SELECTOR_TITLE = "div.ja-news dd"
 title_selector = "a"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "div.newsrelease dt"  # typo修正済み
-date_selector = ""
+SELECTOR_DATE = "div.ja-news dt"  # typo修正済み
+date_selector = "span"
 date_index = 0
-year_unit = "年"
-month_unit = "月"
-day_unit = "日"
+year_unit = "."
+month_unit = "."
+day_unit = ""
 date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
 date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
 # date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"

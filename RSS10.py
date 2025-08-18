@@ -25,16 +25,16 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://www.meiji-seika-pharma.co.jp/me-pharma/index.html"
-GAKKAI = "meファルマ"
+BASE_URL = "https://www.kyosomirai-p.co.jp/"
+GAKKAI = "共創未来ファーマ"
 
-SELECTOR_TITLE = "dl.list dd"
-title_selector = "a"
+SELECTOR_TITLE = "ul.news-list li"
+title_selector = "div.news-list_title"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "dl.list dt"  # typo修正済み
-date_selector = "span"
+SELECTOR_DATE = "ul.news-list li"  # typo修正済み
+date_selector = "div.news-list_date"
 date_index = 0
 year_unit = "."
 month_unit = "."
