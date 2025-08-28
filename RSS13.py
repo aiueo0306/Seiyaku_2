@@ -26,7 +26,7 @@ from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
 BASE_URL = "https://www.kyowayakuhin.co.jp/"
-GAKKAI = "共和薬品工業"
+GAKKAI = "共和薬品工業(ニュース)"
 
 SELECTOR_TITLE = "article a"
 title_selector = "span.index-page__news__link--title"

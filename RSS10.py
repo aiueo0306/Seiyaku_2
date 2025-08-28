@@ -26,7 +26,7 @@ from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
 BASE_URL = "https://www.kyosomirai-p.co.jp/"
-GAKKAI = "共創未来ファーマ"
+GAKKAI = "共創未来ファーマ(ニュース)"
 
 SELECTOR_TITLE = "ul.news-list li"
 title_selector = "div.news-list_title"

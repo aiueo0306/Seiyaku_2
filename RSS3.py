@@ -27,7 +27,7 @@ from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
 BASE_URL = "https://www.ono-pharma.com/ja"
-GAKKAI = "小野薬品"
+GAKKAI = "小野薬品(ニュース)"
 
 SELECTOR_TITLE = "div.top__news__contents.js-tab-content.current li"
 title_selector = "dd"

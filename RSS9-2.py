@@ -25,28 +25,28 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://www.santen.com/jp"
-GAKKAI = "参天製薬（ニュース）"
+BASE_URL = "https://med.kissei.co.jp/information/"
+GAKKAI = "キッセイ薬品(医療機関)"
 
-SELECTOR_TITLE = "div.newslisting-headline__list div.newslisting-headline__item"
-title_selector = "a"
+SELECTOR_TITLE = "ul.info__content__item a"
+title_selector = "em"
 title_index = 0
-href_selector = "a"
+href_selector = ""
 href_index = 0
-SELECTOR_DATE = "div.newslisting-headline__list div.newslisting-headline__item"  # typo修正済み
-date_selector = "time"
+SELECTOR_DATE = "ul.info__content__item a"  # typo修正済み
+date_selector = "span"
 date_index = 0
 year_unit = "年"
 month_unit = "月"
 day_unit = "日"
 date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
-date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
+date_regex = rf"(\d{{2,4}})\s*{year_unit}\s*(\d{{1,2}})\s*{month_unit}\s*(\d{{1,2}})\s*{day_unit}"
 # date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
 # date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
 
 # ===== ポップアップ順序クリック設定 =====
 POPUP_MODE = 1  # 0: ポップアップ処理しない, 1: 処理する
-POPUP_BUTTONS = ["OK"] if POPUP_MODE else [] 
+POPUP_BUTTONS = ["薬剤師（保険薬局）","同意する"] if POPUP_MODE else [] 
 WAIT_BETWEEN_POPUPS_MS = 500
 BUTTON_TIMEOUT_MS = 12000
 
@@ -114,6 +114,6 @@ with sync_playwright() as p:
         print("⚠ 抽出できた記事がありません。HTML構造が変わっている可能性があります。")
 
     os.makedirs("rss_output", exist_ok=True)
-    rss_path = "rss_output/Feed20.xml"
+    rss_path = "rss_output/Feed9-2.xml"
     generate_rss(items, rss_path, BASE_URL, GAKKAI)
     browser.close()

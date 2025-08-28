@@ -27,7 +27,7 @@ from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
 BASE_URL = "https://www.orphanpacific.com/"
-GAKKAI = "オーファンパシフィック"
+GAKKAI = "オーファンパシフィック(ニュース）"
 
 SELECTOR_TITLE = "div#news-news article"
 title_selector = "span.p-pdf"

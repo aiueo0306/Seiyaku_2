@@ -26,7 +26,7 @@ from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
 BASE_URL = "http://www.kyorin-rmd.co.jp/index.html"
-GAKKAI = "キョーリンリメディオ"
+GAKKAI = "キョーリンリメディオ(ニュース)"
 
 SELECTOR_TITLE = "div.jspPane dd"
 title_selector = "a"
