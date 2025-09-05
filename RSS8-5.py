@@ -25,7 +25,7 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://medical-pro.kaken.co.jp/index.html"
+BASE_URL = "https://medical-pro.kaken.co.jp/information/sonota/index.html"
 GAKKAI = "科研製薬(その他)"
 
 SELECTOR_TITLE = "dl.list-information dd"
