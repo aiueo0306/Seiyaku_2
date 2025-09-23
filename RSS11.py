@@ -40,7 +40,7 @@ year_unit = "年"
 month_unit = "月"
 day_unit = "日"
 date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
-date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
+date_regex = rf"(\d{{2,4}})\s*{year_unit}\s*(\d{{1,2}})\s*{month_unit}\s*(\d{{1,2}})\s*{day_unit}"
 # date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
 # date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
 
